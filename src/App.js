@@ -29,25 +29,28 @@ function App() {
   };
 
   return (
-    <div className="container text-center border w-50 my-3 p-5">
+    <div className="container text-center my-3 p-5">
       <h1 className="p-2">Create your first post</h1>
 
-      <Form addDatas={addDatas} />
+      <div className="row">
+        <Form addDatas={addDatas} />
+      </div>
 
-      <table className="table table-hover">
+      <div className="row">
+        <table className="table table-hover">
         <thead className="table-Light">
           <tr>
-            <th scope="col-sm">#</th>
-            <th scope="col-sm">Programming</th>
-            <th scope="col-sm">Stack</th>
-            <th scope="col-sm">Actions</th>
+            <th col="sm">#</th>
+            <th col="sm">Programming</th>
+            <th col="sm">Stack</th>
+            <th col="sm">Actions</th>
           </tr>
         </thead>
 
         <tbody>
             {datas &&
               datas.map((data, index) => (
-                <tr className="stils" key={data.id}>
+                <tr  key={data.id}>
                   <th>{index + 1}</th>
                   <td>{data.program}</td>
                   <td>{data.stack}</td>
@@ -63,6 +66,7 @@ function App() {
               ))}
         </tbody>
       </table>
+      </div>
       {warning && <p className="warning">{warning}</p>}
     </div>
   );

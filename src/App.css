@@ -1,9 +1,4 @@
-.container {
-  display: flex !important;
-  flex-direction: column;
-  justify-content: center !important;
-  align-items:  center !important;  
-}
+
 
 .table-Light {
   background-color: rgba(241, 238, 238, 0.568);

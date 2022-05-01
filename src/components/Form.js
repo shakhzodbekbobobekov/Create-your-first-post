@@ -6,10 +6,6 @@ function Form({ addDatas }) {
   const handleForm = (e) => {
     e.preventDefault();
     addDatas({ program, stack });
-    // if (program.length > 0 && stack.length > 0) {
-    // } else {
-    //   setWarning("Enter a value");
-    // }
     setProgram("");
     setStack("");
   };
