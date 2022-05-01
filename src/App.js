@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import Form from "./components/Form";
 
+
 function App() {
   const [warning, setWarning] = useState("");
   const [datas, setDatas] = useState([
@@ -15,6 +16,7 @@ function App() {
       setDatas((prevE) => {
         return [...prevE, add];
       });
+      setWarning("");
     } else {
       setWarning("Enter a value");
     }
@@ -32,8 +34,8 @@ function App() {
 
       <Form addDatas={addDatas} />
 
-      <table className="table">
-        <thead>
+      <table className="table table-hover">
+        <thead className="table-Light">
           <tr>
             <th scope="col-sm">#</th>
             <th scope="col-sm">Programming</th>
@@ -43,22 +45,22 @@ function App() {
         </thead>
 
         <tbody>
-          {datas &&
-            datas.map((data, index) => (
-              <tr key={data.id}>
-                <th>{index + 1}</th>
-                <td>{data.program}</td>
-                <td>{data.stack}</td>
-                <td>
-                  <button
-                    className="btn btn-warning"
-                    onClick={() => removeBtn(data.id)}
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))}
+            {datas &&
+              datas.map((data, index) => (
+                <tr className="stils" key={data.id}>
+                  <th>{index + 1}</th>
+                  <td>{data.program}</td>
+                  <td>{data.stack}</td>
+                  <td>
+                    <button
+                      className="btn btn-warning"
+                      onClick={() => removeBtn(data.id)}
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
         </tbody>
       </table>
       {warning && <p className="warning">{warning}</p>}
