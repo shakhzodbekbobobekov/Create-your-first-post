@@ -3,6 +3,7 @@ import { useState } from "react";
 import Form from "./components/Form";
 
 function App() {
+  const [warning, setWarning] = useState("");
   const [datas, setDatas] = useState([
     { id: "1", program: "JavaScript", stack: "MERN Stack" },
     { id: "2", program: "Python", stack: "Back End" },
@@ -10,10 +11,13 @@ function App() {
   ]);
 
   const addDatas = (add) => {
-    console.log(add);
-    setDatas((prevE) => {
-      return [...prevE, add];
-    });
+    if (add.program.length > 0 && add.stack.length > 0) {
+      setDatas((prevE) => {
+        return [...prevE, add];
+      });
+    } else {
+      setWarning("Enter a value");
+    }
   };
 
   const removeBtn = (id) => {
@@ -57,6 +61,7 @@ function App() {
             ))}
         </tbody>
       </table>
+      {warning && <p className="warning">{warning}</p>}
     </div>
   );
 }

@@ -1,6 +1,22 @@
+.container {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center !important;
+  align-items:  center !important;
+  
+}
+
 .progLang {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
-  border: 1px;
-  color: #ccc;
+  color: rgb(153, 149, 149);
+}
+
+
+.warning {
+  background-color: #0b5ed7;
+  padding: 6px;
+  margin-bottom: 0;
+  color: #fff;
+  width: 70%;
 }
